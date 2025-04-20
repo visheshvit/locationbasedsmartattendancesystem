@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light grey background for contrast */
+}
+
+.heading {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.strip {
+    background-color: #4CAF50; /* Green strip */
+    padding: 10px 0;
+}
+
+.strip h1, .strip h2 {
+    margin: 0;
+    color: white; /* White text for the headings */
+    font-weight: normal;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 160px); /* Full height minus space for heading */
+}
+
+.college-image {
+    max-width: 100%; /* Increased to 100% for full width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.login-box {
+    background-color: white; /* White background for login box */
+    padding: 40px; /* Increased padding for a larger login box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    width: 100%; /* Make the login box responsive */
+    max-width: 500px; /* Increased maximum width for the login box */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"], input[type="password"], select {
+    margin-bottom: 15px;
+    padding: 15px; /* Increased padding for larger input fields */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s; /* Smooth transition for border */
+}
+
+input[type="text"]:focus, input[type="password"]:focus, select:focus {
+    border-color: #4CAF50; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
+.btn {
+    background-color: #FFC107; /* Yellow button */
+    color: white; /* White text */
+    border: none;
+    padding: 15px; /* Increased padding for a larger button */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for button */
+}
+
+.btn:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+}
+body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #333;
+}
+
+input, select {
+    border-radius: 5px;
+}
+
+input:focus, select:focus {
+    border-color: #17a2b8;
+    box-shadow: 0 0 5px rgba(23, 162, 184, 0.5);
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}

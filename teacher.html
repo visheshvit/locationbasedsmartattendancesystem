@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Interface</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #007bff;
+    }
+    #attendanceTable {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    #attendanceTable th, #attendanceTable td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    #attendanceTable th {
+      background-color: #007bff;
+      color: white;
+    }
+    .button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    .logout-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .session-box {
+      background: #ffffff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .session-box input,
+    .session-box select {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Teacher Interface</h1>
+
+  <div class="session-box">
+    <h3>Create Attendance Session</h3>
+    <input type="text" id="subject" placeholder="Subject" required>
+    <select id="sessionBranch" required>
+      <option value="" disabled selected>Select Branch</option>
+      <option value="ETRX">ETRX</option>
+      <option value="EXCS">EXCS</option>
+      <option value="CMPN">CMPN</option>
+      <option value="INFT">INFT</option>
+      <option value="BIOMED">BIOMED</option>
+      <option value="EXTC">EXTC</option>
+    </select>
+    <input type="number" id="sessionRange" placeholder="Range in meters" min="1" value="100">
+    <input type="time" id="startTime" required>
+    <input type="time" id="endTime" required>
+    <button class="button" onclick="createSession()">Create Session</button>
+    <p id="locationStatus" style="color: green;"></p>
+  </div>
+
+  <div>
+    <label for="filterBranch">Filter by Branch:</label>
+    <select id="filterBranch">
+      <option value="All">All</option>
+      <option value="ETRX">ETRX</option>
+      <option value="EXCS">EXCS</option>
+      <option value="CMPN">CMPN</option>
+      <option value="INFT">INFT</option>
+      <option value="BIOMED">BIOMED</option>
+      <option value="EXTC">EXTC</option>
+    </select>
+  </div>
+
+  <table id="attendanceTable">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Timestamp</th>
+        <th>Name</th>
+        <th>Roll Number</th>
+        <th>Branch</th>
+        <th>Division</th>
+        <th>Subject</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="attendanceBody"></tbody>
+  </table>
+
+  <button class="button" id="downloadCSV">Download CSV Report</button>
+  <button class="logout-button" id="logoutButton">Logout</button>
+
+  <script src="teacher.js"></script>
+</body>
+</html>
